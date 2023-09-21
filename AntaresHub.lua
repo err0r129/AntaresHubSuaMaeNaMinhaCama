@@ -1,4 +1,4 @@
---
+value = nil
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Antares Hub})
 OrionLib:MakeNotification({
