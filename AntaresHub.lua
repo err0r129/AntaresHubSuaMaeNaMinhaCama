@@ -1,6 +1,6 @@
-local "value" = "nil"
+-- fui mlk - neymar
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Antares Hub})
+local Window = OrionLib:MakeWindow({Name = "Antares Hub V0 . 2", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
 	Name = "Maded By Boris",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discoard: .gg/uAtpbJG4y4",
@@ -21,7 +21,9 @@ Tab:AddButton({
 	Name = "Ice Hub",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
-Tava:AddButton({
+end
+})
+Tab:AddButton({
 Name = "Unfair Hub ⚠️ TALVEZ NÃO FUNCIONE NO MOBILE⚠️",
 	Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
@@ -36,8 +38,9 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
-
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+})
 Tab:AddButton({
 	Name = "Fly Gui",
 	Callback = function()
@@ -55,8 +58,8 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "feito pelo Lukas Silva/Boris/robloxboris, obrigado pelo antares pra me incentivar a fazer isso",
 	Callback = function()
-
       		print("button pressed")
-
+end
+})
 OrionLib:Init()
                   
