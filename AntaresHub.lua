@@ -1,13 +1,30 @@
 -- fui mlk - neymar
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub V0 . 3", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
+local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.3.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
 	Name = "Maded By Boris",
-	Content = "Pra poder colaborar com o hub, por favor entre no nosso discoard: .gg/uAtpbJG4y4",
+	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
 	Image = "rbxassetid://15152517555",
 	Time = 5
 })
-
+OrionLib:MakeNotification({
+	Name = "ANTES DE USAR!",
+	Content = "Execute o mobile keyboard na aba importante para abrir o hub! obrigado. (RightShift para abrir)",
+	Image = "rbxassetid://15152517555",
+	Time = 6
+})
+local Tab = Window:MakeTab({
+	Name = "IMPORTANTE ANTES DE USAR",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddLabel("USE PARA FECHAR O HUB NO CELULAR")
+Tab:AddButton({
+Name = "teclado pra mobile",
+	Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
+end
+})
 local Tab = Window:MakeTab({
 	Name = "Kit Brookhaven",
 	Icon = "rbxassetid://4483345998",
