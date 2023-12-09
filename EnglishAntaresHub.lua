@@ -358,7 +358,7 @@ end
 end
 })
 Tab:AddButton({
-	Name = "c00lguis and misc (meu primeiro script do mundo inteiro)",
+	Name = "c00lguis and misc (my first script)",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 -- you can delete or leave this text lol
