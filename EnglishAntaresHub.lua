@@ -5,13 +5,13 @@ OrionLib:MakeNotification({
 	Name = "Maded By Boris",
 	Content = "english and original brazilian version maded by boris (This hub is specially made for the Brazilian troll group Antares, but I'm distributing it to the public rn",
 	Image = "rbxassetid://15152517555",
-	Time = 5
+	Time = 15
 })
 OrionLib:MakeNotification({
 	Name = "BEFORE USE!",
 	Content = "Run the mobile keyboard on the important tab to open the hub! thanks. (Right Shift to open)",
 	Image = "rbxassetid://15152517555",
-	Time = 7
+	Time = 10
 })
 local Tab = Window:MakeTab({
 	Name = "Close/Open",
@@ -27,7 +27,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifv
 end
 })
 local Tab = Window:MakeTab({
-	Name = "Kit Brookhaven",
+	Name = "Kids Troller 2000",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
