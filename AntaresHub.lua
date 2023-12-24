@@ -460,5 +460,6 @@ main.Visible = true
 end)
 end
 })
+Tab:AddLabel("obrigado indi0ta por avaliar com um 9")
 OrionLib:Init()
                   
