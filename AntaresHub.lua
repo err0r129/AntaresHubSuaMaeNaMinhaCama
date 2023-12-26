@@ -187,6 +187,7 @@ wait(1)
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
 wait(2)
 print("acabou mn")
+end
 })
 Tab:AddButton({
 	Name = "Decal Bomb (Visual, so tu pode ver)",
