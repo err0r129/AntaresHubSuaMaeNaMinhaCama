@@ -1,11 +1,11 @@
 -- fui mlk - neymar
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
+local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = AHub})
 OrionLib:MakeNotification({
 	Name = "Maded By Boris",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
 	Image = "rbxassetid://15152517555",
-	Time = 5
+	Time = 15
 })
 OrionLib:MakeNotification({
 	Name = "ANTES DE USAR!",
@@ -35,7 +35,7 @@ local Section = Tab:AddSection({
 	Name = "Hubs"
 })
 Tab:AddButton({
-	Name = "Ice Hub",
+	Name = "Ice Hub [Útil]",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 end
@@ -44,18 +44,16 @@ Tab:AddButton({
 Name = "Unfair Hub [Não Usado Por Mim]",
 	Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
-
-      		print("button pressed")
   	end    
   })
     Tab:AddButton({
-	Name = "Juanko Hub",
+	Name = "Juanko Hub [Não usado por mim]",
 	Callback = function()
 loadstring(game:HttpGet("https://pastefy.app/tIiioko4/raw"))()
 end
 })
 Tab:AddButton({
-	Name = "REDz Hub [Buga Dms]",
+	Name = "REDz Hub [Buga Dms, não usado por mim]",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
 end
@@ -65,18 +63,86 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Infinite Yield",
+	Name = "Infinite Yield [Útil]",
 	Callback = function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end
 })
 Tab:AddButton({
-	Name = "Fly Gui",
+	Name = "Fly Gui [Útil]",
 	Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
-	
+  	end    
+})
+local Section = Tab:AddSection({
+	Name = "Útil soq em seçao separada"
+})
+Tab:AddButton({
+	Name = "ChatSpy (Pra ver PV dos outros)",
+	Callback = function()
+--antares on top
+--This script reveals ALL hidden messages in the default chat
 
-      		print("button pressed")
+enabled = true --chat "/spy" to toggle!
+spyOnMyself = true --if true will check your messages too
+public = false --if true will chat the logs publicly (fun, risky)
+publicItalics = true --if true will use /me to stand out
+privateProperties = { --customize private logs
+	Color = Color3.fromRGB(0,255,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 18;
+}
+
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/spy" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==true or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(1)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
   	end    
 })
 local Tab = Window:MakeTab({
@@ -85,26 +151,44 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "Não Funciona 😭",
+	Name = "Chat Spam [Agora funciona]",
 	Callback = function()
-local interval = 1
-
-
-local message = "ANTARES DOMINA, .gg uAtpbJG4y4"
-
-
-local function sendMessage()
-    local player = game.Players.LocalPlayer
-    player:Chat(message)
-end
-
-while true do
-    sendMessage()
-    wait(interval)
-end
-  	end    
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("ANTARES PASSA NADA .gg/uAtpbJG4y4 SLK","All")
+wait(2)
+print("acabou mn")
 })
-
 Tab:AddButton({
 	Name = "Decal Bomb (Visual, so tu pode ver)",
 	Callback = function()
@@ -460,6 +544,7 @@ main.Visible = true
 end)
 end
 })
-Tab:AddLabel("obrigado indi0ta por avaliar com um 9")
+Tab:AddLabel("obrigado indi0ta por avaliar com um 9 o AHub")
+Tab:AddLabel("Avalie se encontrar alguém chamado Boris!")
 OrionLib:Init()
                   
