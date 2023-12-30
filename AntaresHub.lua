@@ -802,8 +802,11 @@ UN:addButton("RTX Script (never tested it so it might not work)",function()
 end)
 
 UN:addLabel("Tell me a suggestion!","Just enter the qp server and ping @b.ori.s on Discord ;)")
+end)
+end)
 })
 Tab:AddLabel("obrigado indi0ta por avaliar com um 9 o AHub")
 Tab:AddLabel("Avalie se encontrar alguém chamado Boris!")
+
 OrionLib:Init()
                   
