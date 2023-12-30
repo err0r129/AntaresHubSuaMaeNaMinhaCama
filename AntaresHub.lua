@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Ahub})
+local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
 	Name = "Maded By Boris",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
