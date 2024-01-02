@@ -612,7 +612,7 @@ end
 })
 
 Tab:AddButton({
-    Name = "Zeri Hub (Um hub que ainda estou trabalhando, o único que scripto o resto ta abandonado)",
+    Name = "Zeri Hub (Um hub que ainda estou trabalhando)",
     Callback = function()
         local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CasparLmao/Ui-Libs/Main/Playstation/Playstation.Source"))()
 
