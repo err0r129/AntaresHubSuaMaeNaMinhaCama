@@ -1,7 +1,7 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
-	Name = "Maded By Boris",
+	Name = "Maded By Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
 	Image = "rbxassetid://15152517555",
 	Time = 15
@@ -616,7 +616,7 @@ Tab:AddButton({
     Callback = function()
         local GUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/CasparLmao/Ui-Libs/Main/Playstation/Playstation.Source"))()
 
-        local UI = GUI:CreateWindow("Zeri Hub V1.2","W QP Maded by boris and name by SKYPINE")
+        local UI = GUI:CreateWindow("Zeri Hub V1.2","W QP Maded by ctrl.dev and name by ATOMIC.DEV")
 
         local Home = UI:addPage("FPS Games",1,true,6)
 
@@ -801,10 +801,10 @@ Tab:AddButton({
             loadstring(game:HttpGet(('https://pastefy.app/xXkUxA0P/raw'),true))()
         end)
 
-        UN:addLabel("Tell me a suggestion!","Just enter the qp server and ping @b.ori.s on Discord ;)")
+        UN:addLabel("Tell me a suggestion!","Just enter the qp server and ping @ctrl.dev on Discord ;)")
     end
 })
 Tab:AddLabel("obrigado indi0ta por avaliar com um 9 o AHub")
-Tab:AddLabel("Avalie se encontrar alguém chamado Boris!")
+Tab:AddLabel("Avalie se encontrar alguém chamado Boris no Roblox!")
 
 OrionLib:Init()
