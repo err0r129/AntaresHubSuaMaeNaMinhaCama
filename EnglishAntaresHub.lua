@@ -1,5 +1,5 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub English Ver. V0.4.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
+local Window = OrionLib:MakeWindow({Name = "Antares Hub English Ver. V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
 	Name = "Maded By Boris",
 	Content = "english and original brazilian version maded by boris (This hub is specially made for the Brazilian troll group Antares, but I'm distributing it to the public rn",
@@ -37,7 +37,7 @@ local Section = Tab:AddSection({
 	Name = "Hubs"
 })
 Tab:AddButton({
-	Name = "Ice Hub",
+	Name = "Ice Hub [used]",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 end
@@ -67,13 +67,13 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddButton({
-	Name = "Infinite Yield",
+	Name = "Infinite Yield [used]",
 	Callback = function()
 	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end
 })
 Tab:AddButton({
-	Name = "Fly Gui",
+	Name = "Fly Gui [not used]",
 	Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
 	
@@ -81,31 +81,138 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script
       		print("button pressed")
   	end    
 })
+local Section = Tab:AddSection({
+	Name = "Misc Scripts"
+})
+Tab:AddButton({
+	Name = "Chat Spy [Useful af, spies dms]",
+	Callback = function()
+enabled = true
+spyOnMyself = true
+public = false
+publicItalics = true 
+privateProperties = { 
+	Color = Color3.fromRGB(0,255,255); 
+	Font = Enum.Font.SourceSansBold;
+	TextSize = 18;
+}
+
+
+local StarterGui = game:GetService("StarterGui")
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
+local saymsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("SayMessageRequest")
+local getmsg = game:GetService("ReplicatedStorage"):WaitForChild("DefaultChatSystemChatEvents"):WaitForChild("OnMessageDoneFiltering")
+local instance = (_G.chatSpyInstance or 0) + 1
+_G.chatSpyInstance = instance
+
+local function onChatted(p,msg)
+	if _G.chatSpyInstance == instance then
+		if p==player and msg:lower():sub(1,4)=="/spy" then
+			enabled = not enabled
+			wait(0.3)
+			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+		elseif enabled and (spyOnMyself==true or p~=player) then
+			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+			local hidden = true
+			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+					hidden = false
+				end
+			end)
+			wait(1)
+			conn:Disconnect()
+			if hidden and enabled then
+				if public then
+					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+				else
+					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+				end
+			end
+		end
+	end
+end
+
+for _,p in ipairs(Players:GetPlayers()) do
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end
+Players.PlayerAdded:Connect(function(p)
+	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+end)
+privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
+local chatFrame = player.PlayerGui.Chat.Frame
+chatFrame.ChatChannelParentFrame.Visible = true
+chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
+end
+})
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://15152517555",
 	PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "Not Working 😭",
+	Name = "Chat Spam 💣",
 	Callback = function()
-local interval = 1
-
-
-local message = "ANTARES DOMINA, .gg uAtpbJG4y4"
-
-
-local function sendMessage()
-    local player = game.Players.LocalPlayer
-    player:Chat(message)
-end
-
-while true do
-    sendMessage()
-    wait(interval)
-end
-  	end    
-})
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("THE BEST TROLLER GROUP IN BRAZIL,ANTARES","All")
+wait(1)
 
 Tab:AddButton({
 	Name = "Decal Bomb (Visual)",
