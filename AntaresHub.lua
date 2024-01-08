@@ -3,7 +3,7 @@ local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = f
 OrionLib:MakeNotification({
 	Name = "Maded By Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
-	Image = "rbxassetid://15152517555",
+	Image = "rbxassetid://7733993211",
 	Time = 15
 })
 OrionLib:MakeNotification({
@@ -26,7 +26,7 @@ end
 })
 local Tab = Window:MakeTab({
 	Name = "Kit Brookhaven",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://7734058599",
 	PremiumOnly = false
 })
 
