@@ -3,18 +3,18 @@ local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = f
 OrionLib:MakeNotification({
 	Name = "Maded By Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
-	Image = "7733993211",
+	Image = "rbxassetid://7733993211",
 	Time = 15
 })
 OrionLib:MakeNotification({
 	Name = "ANTES DE USAR!",
 	Content = "Execute o mobile keyboard na aba importante para abrir o hub! obrigado. (ShiftDireita para abrir)",
-	Image = "15152517555",
+	Image = "rbxassetid://15152517555",
 	Time = 7
 })
 local Tab = Window:MakeTab({
 	Name = "Fechar/Abrir Hub",
-	Icon = "4483345998",
+	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 Tab:AddLabel("USE PARA FECHAR O HUB NO MOBILE")
@@ -26,7 +26,7 @@ end
 })
 local Tab = Window:MakeTab({
 	Name = "Kit Brookhaven",
-	Icon = "7734058599",
+	Icon = "rbxassetid://7734058599",
 	PremiumOnly = false
 })
 
