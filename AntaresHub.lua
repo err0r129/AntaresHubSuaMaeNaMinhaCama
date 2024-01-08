@@ -369,7 +369,7 @@ end
 })
 local Tab = Window:MakeTab({
 	Name = "Servidor Privado",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://7733978098",
 	PremiumOnly = false
 })
 Tab:AddButton({
@@ -381,7 +381,7 @@ end
 })
 local Tab = Window:MakeTab({
 	Name = "Feito Por Boris",
-	Icon = "rbxassetid://4483345998",
+	Icon = "rbxassetid://7733956134",
 	PremiumOnly = false
 })
 Tab:AddButton({
