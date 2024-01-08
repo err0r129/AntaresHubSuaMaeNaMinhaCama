@@ -1,9 +1,9 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
-	Name = "Maded By Boris/ctrl.dev",
+	Name = "Maded with love By Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: .gg/uAtpbJG4y4",
-	Image = "rbxassetid://7733993211",
+	Image = "rbxassetid://7733956134",
 	Time = 15
 })
 OrionLib:MakeNotification({
@@ -146,7 +146,7 @@ chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Positio
 })
 local Tab = Window:MakeTab({
 	Name = "Misc",
-	Icon = "rbxassetid://15152517555",
+	Icon = "rbxassetid://7733964719",
 	PremiumOnly = false
 })
 Tab:AddButton({
