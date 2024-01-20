@@ -1,5 +1,5 @@
-local OrionLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/shlexware/Orion/main/source"))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.5.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
 	Name = "Maded with love By Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: não disponível",
@@ -66,14 +66,8 @@ Tab:AddButton({
 game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","3RRØR ¹2⁹")
 end
 })
-Tab:AddTextbox({
-	Name = "Mudar seu nome",
-	Default = "Antares Membro 🇧🇷",
-	TextDisappear = true,
-	Callback = function(hi)
-game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","hi")
-end
 	end	  
+
 })
 local Section = Tab:AddSection({
 	Name = "Guis"
