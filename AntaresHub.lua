@@ -66,7 +66,6 @@ Tab:AddButton({
 game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","3RRØR ¹2⁹")
 end
 })
-	end	  
 
 })
 local Section = Tab:AddSection({
