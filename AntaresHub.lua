@@ -58,6 +58,31 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/
 end
 })
 local Section = Tab:AddSection({
+	Name = "BrookScripts"
+})
+Tab:AddButton({
+	Name = "Mudar seu nome para ĘRRØR 129",
+	Callback = function()
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","3RRØR ¹2⁹")
+end
+})
+Tab:AddTextbox({
+	Name = "Mudar seu nome",
+	Default = "Antares Membro 🇧🇷",
+	TextDisappear = true,
+	Callback = function(hi)
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","hi")
+end
+	end	  
+})
+
+--[[
+Name = <string> - The name of the textbox.
+Default = <string> - The default value of the textbox.
+TextDisappear = <bool> - Makes the text disappear in the textbox after losing focus.
+Callback = <function> - The function of the textbox.
+]]
+local Section = Tab:AddSection({
 	Name = "Guis"
 })
 
