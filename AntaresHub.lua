@@ -1,114 +1,117 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.5.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Antares})
 OrionLib:MakeNotification({
-	Name = "made with love by Boris/ctrl.dev",
-	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: não disponível",
-	Image = "rbxassetid://7733956134",
-	Time = 15
+        Name = "made with love by Boris/ctrl.dev",
+        Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: não disponível",
+        Image = "rbxassetid://7733956134",
+        Time = 15
 })
 OrionLib:MakeNotification({
-	Name = "Um beijo aos influenciadores💋",
-	Content = "aqueles que gravaram um vídeo usando o hub: Kaike, Error 129, Soy blackouts (usou mas não gravou), pânico 067 (vai usar)",
-	Image = "rbxassetid://7733956134",
-	Time = 20
+        Name = "Um beijo aos influenciadores💋",
+        Content = "aqueles que gravaram um vídeo usando o hub: Kaike, Error 129, Soy blackouts (usou mas não gravou), pânico 067 (vai usar), laurag39, tigrinho_rlk",
+        Image = "rbxassetid://7733956134",
+        Time = 20
 })
 OrionLib:MakeNotification({
-	Name = "ANTES DE USAR!",
-	Content = "Execute o mobile keyboard na aba importante para abrir o hub! obrigado. (ShiftDireita para abrir)",
-	Image = "rbxassetid://15152517555",
-	Time = 7
+        Name = "ANTES DE USAR!",
+        Content = "Execute o mobile keyboard na aba importante para abrir o hub! obrigado. (ShiftDireita para abrir)",
+        Image = "rbxassetid://15152517555",
+        Time = 7
 })
 local Tab = Window:MakeTab({
-	Name = "Fechar/Abrir Hub",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
+        Name = "Fechar/Abrir Hub",
+        Icon = "rbxassetid://4483345998",
+        PremiumOnly = false
 })
 Tab:AddLabel("USE PARA FECHAR O HUB NO MOBILE")
 Tab:AddButton({
 Name = "teclado pra mobile",
-	Callback = function()
+        Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt", true))()
 end
 })
 local Tab = Window:MakeTab({
-	Name = "Kit Brookhaven",
-	Icon = "rbxassetid://7734058599",
-	PremiumOnly = false
+        Name = "Kit Brookhaven",
+        Icon = "rbxassetid://7734058599",
+        PremiumOnly = false
 })
 
 local Section = Tab:AddSection({
-	Name = "Hubs"
+        Name = "Hubs"
 })
 Tab:AddButton({
-	Name = "Ice Hub [Útil]",
-	Callback = function()
+        Name = "Ice Hub [Útil]",
+        Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 end
 })
 Tab:AddButton({
 Name = "Unfair Hub [Buga dms,Não Usado Por Mim]",
-	Callback = function()
+        Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
-  	end    
+          end    
   })
     Tab:AddButton({
-	Name = "Juanko Hub [Não usado por mim]",
-	Callback = function()
+        Name = "Juanko Hub [Não usado por mim]",
+        Callback = function()
 loadstring(game:HttpGet("https://pastefy.app/tIiioko4/raw"))()
 end
 })
 Tab:AddButton({
-	Name = "REDz Hub [Útil]",
-	Callback = function()
+        Name = "REDz Hub [Útil]",
+        Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
 end
 })
 
 local Section = Tab:AddSection({
-	Name = "BrookScripts"
+        Name = "BrookScripts"
 })
 
 Tab:AddButton({
-	Name = "Mudar seu nome para ĘRRØR 129",
-	Callback = function()
+        Name = "Mudar seu nome para ĘRRØR 129",
+        Callback = function()
 game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","ĘRRØR 129")
 end
 })
 
 Tab:AddButton({
-	Name = "Mudar seu nome para um Zaralhador",
-	Callback = function()
-game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","😈¡antares was here!😈")
-
-while wait() do
-   game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPBioColor",Color3.new(1, 0, 0.822252))
-wait(1)
-game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(0, 0.597711, 1))
-end
+    Name = "Mudar seu nome para um Zaralhador",
+    Callback = function()
+        game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","😈¡antares was here!😈")
+        while wait() do
+            game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(1, 0, 0.822252))
+            wait(1)
+            game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(0, 0.597711, 1))
+            wait(1)
+            game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(0, 0.445511, 1))
+        end
+    end
 })
+
 
 local Section = Tab:AddSection({
-	Name = "Guis"
+        Name = "Guis"
 })
 
 Tab:AddButton({
-	Name = "Infinite Yield [Útil]",
-	Callback = function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        Name = "Infinite Yield [Útil]",
+        Callback = function()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end
 })
 Tab:AddButton({
-	Name = "Fly Gui [Útil]",
-	Callback = function()
+        Name = "Fly Gui [Útil]",
+        Callback = function()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/Pro69Yes/sussy-Script/main/SecuredFlyGuiv3.lua'))()
-  	end    
+          end    
 })
 local Section = Tab:AddSection({
-	Name = "Útil soq em seçao separada"
+        Name = "Útil soq em seçao separada"
 })
 Tab:AddButton({
-	Name = "ChatSpy (Pra ver PV dos outros)",
-	Callback = function()
+        Name = "ChatSpy (Pra ver PV dos outros)",
+        Callback = function()
 --antares on top
 --This script reveals ALL hidden messages in the default chat
 
@@ -117,9 +120,9 @@ spyOnMyself = true --if true will check your messages too
 public = false --if true will chat the logs publicly (fun, risky)
 publicItalics = true --if true will use /me to stand out
 privateProperties = { --customize private logs
-	Color = Color3.fromRGB(0,255,255); 
-	Font = Enum.Font.SourceSansBold;
-	TextSize = 18;
+        Color = Color3.fromRGB(0,255,255); 
+        Font = Enum.Font.SourceSansBold;
+        TextSize = 18;
 }
 
 
@@ -132,39 +135,39 @@ local instance = (_G.chatSpyInstance or 0) + 1
 _G.chatSpyInstance = instance
 
 local function onChatted(p,msg)
-	if _G.chatSpyInstance == instance then
-		if p==player and msg:lower():sub(1,4)=="/spy" then
-			enabled = not enabled
-			wait(0.3)
-			privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
-			StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
-		elseif enabled and (spyOnMyself==true or p~=player) then
-			msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
-			local hidden = true
-			local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
-				if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
-					hidden = false
-				end
-			end)
-			wait(1)
-			conn:Disconnect()
-			if hidden and enabled then
-				if public then
-					saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
-				else
-					privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
-					StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
-				end
-			end
-		end
-	end
+        if _G.chatSpyInstance == instance then
+                if p==player and msg:lower():sub(1,4)=="/spy" then
+                        enabled = not enabled
+                        wait(0.3)
+                        privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
+                        StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+                elseif enabled and (spyOnMyself==true or p~=player) then
+                        msg = msg:gsub("[\n\r]",''):gsub("\t",' '):gsub("[ ]+",' ')
+                        local hidden = true
+                        local conn = getmsg.OnClientEvent:Connect(function(packet,channel)
+                                if packet.SpeakerUserId==p.UserId and packet.Message==msg:sub(#msg-#packet.Message+1) and (channel=="All" or (channel=="Team" and public==false and Players[packet.FromSpeaker].Team==player.Team)) then
+                                        hidden = false
+                                end
+                        end)
+                        wait(1)
+                        conn:Disconnect()
+                        if hidden and enabled then
+                                if public then
+                                        saymsg:FireServer((publicItalics and "/me " or '').."{SPY} [".. p.Name .."]: "..msg,"All")
+                                else
+                                        privateProperties.Text = "{SPY} [".. p.Name .."]: "..msg
+                                        StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
+                                end
+                        end
+                end
+        end
 end
 
 for _,p in ipairs(Players:GetPlayers()) do
-	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+        p.Chatted:Connect(function(msg) onChatted(p,msg) end)
 end
 Players.PlayerAdded:Connect(function(p)
-	p.Chatted:Connect(function(msg) onChatted(p,msg) end)
+        p.Chatted:Connect(function(msg) onChatted(p,msg) end)
 end)
 privateProperties.Text = "{SPY "..(enabled and "EN" or "DIS").."ABLED}"
 StarterGui:SetCore("ChatMakeSystemMessage",privateProperties)
@@ -172,22 +175,22 @@ if not player.PlayerGui:FindFirstChild("Chat") then wait(3) end
 local chatFrame = player.PlayerGui.Chat.Frame
 chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-  	end    
+          end    
 })
 local Tab = Window:MakeTab({
-	Name = "Misc",
-	Icon = "rbxassetid://7733964719",
-	PremiumOnly = false
+        Name = "Misc",
+        Icon = "rbxassetid://7733964719",
+        PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "Chat Spam [Agora funciona]",
-	Callback = function()
+        Name = "Chat Spam [Agora funciona]",
+        Callback = function()
 print("deletadoh")
 end
 })
 Tab:AddButton({
-	Name = "Decal Bomb (Visual, so tu pode ver)",
-	Callback = function()
+        Name = "Decal Bomb (Visual, so tu pode ver)",
+        Callback = function()
 sound = Instance.new("Sound",workspace)
 sound.Name = "Spooky scary skeletons - jontron"
 sound.SoundId = "rbxassetid://138081566"
@@ -196,9 +199,9 @@ sound.Looped = true
 local ID = 15152517555
  local Skybox = true
  local particle = true
- 
+
 -- DO NOT CHANGE BELOW. UNLESS YOU KNOW WHAT YOU'RE DOING.
- 
+
 for i,v in pairs (game.Workspace:GetChildren()) do
         if v:IsA("Part") then
             local decal1 =Instance.new("Decal")
@@ -259,8 +262,8 @@ for i,v in pairs (game.Workspace:GetChildren()) do
             end
             end
             end 
- 
- 
+
+
 if Skybox == true then
 local sky = Instance.new("Sky")
 sky.Parent = game.Lighting
@@ -271,7 +274,7 @@ sky.SkyboxLf = "http://www.roblox.com/asset/?id=15152517555"
 sky.SkyboxRt = "http://www.roblox.com/asset/?id=15152517555" 
 sky.SkyboxUp = "http://www.roblox.com/asset/?id=15152517555" 
 end
- 
+
 if particle == true then
 for i,v in pairs (game.Workspace:GetChildren()) do
         if v:IsA("Part") then
@@ -294,29 +297,29 @@ particle2.Texture = "http://www.roblox.com/asset/?id=12389061"
         end
         end
 end
-  	end    
-  
+          end    
+
 })
 local Tab = Window:MakeTab({
-	Name = "Servidor Privado",
-	Icon = "rbxassetid://7733978098",
-	PremiumOnly = false
+        Name = "Servidor Privado",
+        Icon = "rbxassetid://7733978098",
+        PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "Convite pro servidor privado (checke console)",
-	Callback = function()
+        Name = "Convite pro servidor privado (checke console)",
+        Callback = function()
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer("fale /console","All")
 print("https://discord.com/invite/A3vhM9PA")
 end
 })
 local Tab = Window:MakeTab({
-	Name = "Feito Por Boris",
-	Icon = "rbxassetid://7733956134",
-	PremiumOnly = false
+        Name = "Feito Por Boris",
+        Icon = "rbxassetid://7733956134",
+        PremiumOnly = false
 })
 Tab:AddButton({
-	Name = "c00lrussian's gui (skid ver.)",
-	Callback = function()
+        Name = "c00lrussian's gui (skid ver.)",
+        Callback = function()
 -- im a skid
 local screenGui = Instance.new("ScreenGui")
 screenGui.Parent = game.Players.LocalPlayer.PlayerGui
@@ -438,8 +441,8 @@ end
 end
 })
 Tab:AddButton({
-	Name = "c00lguis and misc (meu primeiro script do mundo inteiro)",
-	Callback = function()
+        Name = "c00lguis and misc (meu primeiro script do mundo inteiro)",
+        Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/main/Brookhaven"))()
 -- you can delete or leave this text lol
 local ScreenGui = Instance.new("ScreenGui")
