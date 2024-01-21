@@ -57,9 +57,11 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
 end
 })
+
 local Section = Tab:AddSection({
 	Name = "BrookScripts"
 })
+
 Tab:AddButton({
 	Name = "Mudar seu nome para ĘRRØR 129",
 	Callback = function()
