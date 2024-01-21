@@ -1,0 +1,5 @@
+while wait() do
+   game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPBioColor",Color3.new(1, 0, 0.822252))
+wait(1)
+game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(0, 0.597711, 1))
+end
