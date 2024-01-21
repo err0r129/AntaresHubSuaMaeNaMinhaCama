@@ -67,7 +67,7 @@ game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayNam
 end
 })
 
-})
+
 local Section = Tab:AddSection({
 	Name = "Guis"
 })
