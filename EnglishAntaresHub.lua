@@ -17,8 +17,7 @@ local Tab = Window:MakeTab({
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
-Tab:AddLabel("Our Sponsor today: Lemon Hub, The Best Blade Ball Script Ever!invitation below")
-Tab:AddLabel("https://discord.com/invite/5gzR85MFsm")
+Tab:AddLabel("Reminder:English Version of antares hub got descontinued.")
 Tab:AddLabel("USE IT TO CLOSE THE HUB ON MOBILE!")
 Tab:AddLabel("English version is 100% produced! Enjoy")
 Tab:AddButton({
@@ -568,7 +567,6 @@ main.Visible = true
 end)
 end
 })
-Tab:AddLabel("Our Sponsor today: Lemon Hub, The Best Blade Ball Script Ever!invitation below")
-Tab:AddLabel("https://discord.com/invite/5gzR85MFsm")
+Tab:AddLabel("Reminder:English Version of antares hub got descontinued.")
 OrionLib:Init()
                   
