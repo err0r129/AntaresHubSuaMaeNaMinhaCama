@@ -1,10 +1,16 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.5.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Antares})
 OrionLib:MakeNotification({
-	Name = "Maded with love By Boris/ctrl.dev",
+	Name = "made with love by Boris/ctrl.dev",
 	Content = "Pra poder colaborar com o hub, por favor entre no nosso discord: não disponível",
 	Image = "rbxassetid://7733956134",
 	Time = 15
+})
+OrionLib:MakeNotification({
+	Name = "Um beijo aos influenciadores💋",
+	Content = "aqueles que gravaram um vídeo usando o hub: Kaike, Error 129, Soy blackouts (usou mas não gravou), pânico 067 (vai usar)",
+	Image = "rbxassetid://7733956134",
+	Time = 20
 })
 OrionLib:MakeNotification({
 	Name = "ANTES DE USAR!",
@@ -40,7 +46,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/IceMael7/NewIceHub/ma
 end
 })
 Tab:AddButton({
-Name = "Unfair Hub [Não Usado Por Mim]",
+Name = "Unfair Hub [Buga dms,Não Usado Por Mim]",
 	Callback = function()
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/rblxscriptsnet/unfair/main/rblxhub.lua'),true))()
   	end    
@@ -52,7 +58,7 @@ loadstring(game:HttpGet("https://pastefy.app/tIiioko4/raw"))()
 end
 })
 Tab:AddButton({
-	Name = "REDz Hub [Buga Dms, não usado por mim]",
+	Name = "REDz Hub [Útil]",
 	Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/REDzHUB/REDzHUB/main/REDzHUB"))()
 end
@@ -65,10 +71,21 @@ local Section = Tab:AddSection({
 Tab:AddButton({
 	Name = "Mudar seu nome para ĘRRØR 129",
 	Callback = function()
-game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","3RRØR ¹2⁹")
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","ĘRRØR 129")
 end
 })
 
+Tab:AddButton({
+	Name = "Mudar seu nome para um Zaralhador",
+	Callback = function()
+game:GetService("ReplicatedStorage").RE["1RPNam1eTex1t"]:FireServer("RolePlayName","😈¡antares was here!😈")
+
+while wait() do
+   game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPBioColor",Color3.new(1, 0, 0.822252))
+wait(1)
+game:GetService("ReplicatedStorage").RE["1RPNam1eColo1r"]:FireServer("PickingRPNameColor",Color3.new(0, 0.597711, 1))
+end
+})
 
 local Section = Tab:AddSection({
 	Name = "Guis"
