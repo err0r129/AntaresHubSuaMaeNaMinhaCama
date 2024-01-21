@@ -1,4 +1,4 @@
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source'))()
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Window = OrionLib:MakeWindow({Name = "Antares Hub V0.5.0", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = Antares})
 OrionLib:MakeNotification({
 	Name = "Maded with love By Boris/ctrl.dev",
