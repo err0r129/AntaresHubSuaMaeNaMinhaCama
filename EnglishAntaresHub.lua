@@ -1,8 +1,8 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local Window = OrionLib:MakeWindow({Name = "Antares Hub English Ver. V0.4.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
+local Window = OrionLib:MakeWindow({Name = "Saturno Hub v1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest", introText = eae})
 OrionLib:MakeNotification({
-	Name = "Maded By Boris",
-	Content = "english and original brazilian version maded by boris (This hub is specially made for the Brazilian troll group Antares, but I'm distributing it to the public rn",
+	Name = "By error129",
+	Content = "Hub oficial da Saturno Scripts",
 	Image = "rbxassetid://15152517555",
 	Time = 15
 })
